@@ -1,0 +1,11 @@
+﻿{
+  "SqlScript": {
+    "UId": "93409c7e-90f4-af2b-df91-3d106298a32e",
+    "Name": "DeleteLandFromRealtyTypeClassicMsSql",
+    "DBEngineType": 0,
+    "InstallType": 2,
+    "ModifiedOnUtc": "\/Date(1738404336000)\/",
+    "BackwardCompatibilityConfirmed": false,
+    "DependsOn": []
+  }
+}

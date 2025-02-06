@@ -2,7 +2,7 @@
   "Descriptor": {
     "UId": "df05b457-467f-9f41-3d8f-bf4cec66e10c",
     "Name": "UsrRealtyTypeClassic",
-    "ModifiedOnUtc": "\/Date(1738402242000)\/",
+    "ModifiedOnUtc": "\/Date(1738403649000)\/",
     "InstallType": 0,
     "Schema": {
       "UId": "9dea7e5e-c358-4266-a711-0e51ab30c780",
@@ -17,39 +17,39 @@
         "DataTypeValueUId": "23018567-a13c-4320-8687-fd6f9e3699bd"
       },
       {
-        "ColumnUId": "e80190a5-03b2-4095-90f7-a193a960adee",
-        "IsForceUpdate": false,
-        "IsKey": false,
-        "ColumnName": "CreatedOn",
-        "DataTypeValueUId": "d21e9ef4-c064-4012-b286-fa1a8171da44"
-      },
-      {
-        "ColumnUId": "5b166006-5986-3e19-1ccc-0d12044db5e6",
-        "IsForceUpdate": false,
-        "IsKey": false,
-        "ColumnName": "UsrCode",
-        "DataTypeValueUId": "325a73b8-0f47-44a0-8412-7606f78003ac"
-      },
-      {
         "ColumnUId": "736c30a7-c0ec-4fa9-b034-2552b319b633",
-        "IsForceUpdate": false,
+        "IsForceUpdate": true,
         "IsKey": false,
         "ColumnName": "Name",
         "DataTypeValueUId": "ddb3a1ee-07e8-4d62-b7a9-d0e618b00fbd"
       },
       {
+        "ColumnUId": "e80190a5-03b2-4095-90f7-a193a960adee",
+        "IsForceUpdate": true,
+        "IsKey": false,
+        "ColumnName": "CreatedOn",
+        "DataTypeValueUId": "d21e9ef4-c064-4012-b286-fa1a8171da44"
+      },
+      {
+        "ColumnUId": "9e53fd7c-dde4-4502-a64c-b9e34148108b",
+        "IsForceUpdate": true,
+        "IsKey": false,
+        "ColumnName": "Description",
+        "DataTypeValueUId": "ddb3a1ee-07e8-4d62-b7a9-d0e618b00fbd"
+      },
+      {
         "ColumnUId": "9928edec-4272-425a-93bb-48743fee4b04",
-        "IsForceUpdate": false,
+        "IsForceUpdate": true,
         "IsKey": false,
         "ColumnName": "ModifiedOn",
         "DataTypeValueUId": "d21e9ef4-c064-4012-b286-fa1a8171da44"
       },
       {
-        "ColumnUId": "9e53fd7c-dde4-4502-a64c-b9e34148108b",
-        "IsForceUpdate": false,
+        "ColumnUId": "5b166006-5986-3e19-1ccc-0d12044db5e6",
+        "IsForceUpdate": true,
         "IsKey": false,
-        "ColumnName": "Description",
-        "DataTypeValueUId": "ddb3a1ee-07e8-4d62-b7a9-d0e618b00fbd"
+        "ColumnName": "UsrCode",
+        "DataTypeValueUId": "325a73b8-0f47-44a0-8412-7606f78003ac"
       }
     ]
   }
