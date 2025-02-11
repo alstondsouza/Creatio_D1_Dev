@@ -38,11 +38,56 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 			},
 			{
 				"operation": "insert",
-				"name": "UsrName",
+				"name": "PushMeButton",
+				"values": {
+					"type": "crt.Button",
+					"caption": "#ResourceString(PushMeButton_caption)#",
+					"color": "outline",
+					"disabled": false,
+					"size": "medium",
+					"iconPosition": "left-icon",
+					"visible": true,
+					"icon": "database-icon",
+					"clicked": {
+						"request": "usr.PushButtonRequest"
+					},
+					"clickMode": "default"
+				},
+				"parentName": "CardToggleContainer",
+				"propertyName": "items",
+				"index": 0
+			},
+			{
+				"operation": "insert",
+				"name": "RealtyNumber",
 				"values": {
 					"layoutConfig": {
 						"column": 1,
 						"row": 1,
+						"colSpan": 1,
+						"rowSpan": 1
+					},
+					"type": "crt.Input",
+					"multiline": false,
+					"label": "$Resources.Strings.PDS_UsrNumber_mdx5rnh",
+					"labelPosition": "auto",
+					"control": "$PDS_UsrNumber_mdx5rnh",
+					"visible": true,
+					"readonly": true,
+					"placeholder": "",
+					"tooltip": ""
+				},
+				"parentName": "SideAreaProfileContainer",
+				"propertyName": "items",
+				"index": 0
+			},
+			{
+				"operation": "insert",
+				"name": "UsrName",
+				"values": {
+					"layoutConfig": {
+						"column": 1,
+						"row": 2,
 						"colSpan": 1,
 						"rowSpan": 1
 					},
@@ -53,7 +98,7 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 				},
 				"parentName": "SideAreaProfileContainer",
 				"propertyName": "items",
-				"index": 0
+				"index": 1
 			},
 			{
 				"operation": "insert",
@@ -61,7 +106,7 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 				"values": {
 					"layoutConfig": {
 						"column": 1,
-						"row": 2,
+						"row": 3,
 						"colSpan": 1,
 						"rowSpan": 1
 					},
@@ -72,7 +117,7 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 				},
 				"parentName": "SideAreaProfileContainer",
 				"propertyName": "items",
-				"index": 1
+				"index": 2
 			},
 			{
 				"operation": "insert",
@@ -80,7 +125,7 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 				"values": {
 					"layoutConfig": {
 						"column": 1,
-						"row": 3,
+						"row": 4,
 						"colSpan": 1,
 						"rowSpan": 1
 					},
@@ -91,7 +136,27 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 				},
 				"parentName": "SideAreaProfileContainer",
 				"propertyName": "items",
-				"index": 2
+				"index": 3
+			},
+			{
+				"operation": "insert",
+				"name": "Commission",
+				"values": {
+					"layoutConfig": {
+						"column": 1,
+						"row": 5,
+						"colSpan": 1,
+						"rowSpan": 1
+					},
+					"type": "crt.NumberInput",
+					"label": "$Resources.Strings.PDS_UsrCommission_d3j4heh",
+					"labelPosition": "auto",
+					"control": "$PDS_UsrCommission_d3j4heh",
+					"readonly": true
+				},
+				"parentName": "SideAreaProfileContainer",
+				"propertyName": "items",
+				"index": 4
 			},
 			{
 				"operation": "insert",
@@ -178,7 +243,11 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 					"label": "$Resources.Strings.PDS_UsrComment_tsu3k3p",
 					"labelPosition": "auto",
 					"control": "$PDS_UsrComment_tsu3k3p",
-					"multiline": false
+					"multiline": false,
+					"visible": false,
+					"readonly": false,
+					"placeholder": "",
+					"tooltip": ""
 				},
 				"parentName": "GeneralInfoTabContainer",
 				"propertyName": "items",
@@ -227,6 +296,102 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 				"parentName": "Manager",
 				"propertyName": "listActions",
 				"index": 0
+			},
+			{
+				"operation": "insert",
+				"name": "Country",
+				"values": {
+					"layoutConfig": {
+						"column": 1,
+						"row": 3,
+						"colSpan": 1,
+						"rowSpan": 1
+					},
+					"type": "crt.ComboBox",
+					"label": "$Resources.Strings.PDS_UsrCountry_3tuo4vm",
+					"labelPosition": "auto",
+					"control": "$PDS_UsrCountry_3tuo4vm",
+					"listActions": [],
+					"showValueAsLink": true,
+					"controlActions": [],
+					"visible": true,
+					"readonly": false,
+					"placeholder": "",
+					"tooltip": "",
+					"valueDetails": null
+				},
+				"parentName": "GeneralInfoTabContainer",
+				"propertyName": "items",
+				"index": 4
+			},
+			{
+				"operation": "insert",
+				"name": "City",
+				"values": {
+					"layoutConfig": {
+						"column": 2,
+						"row": 3,
+						"colSpan": 1,
+						"rowSpan": 1
+					},
+					"type": "crt.ComboBox",
+					"label": "$Resources.Strings.PDS_UsrCity_rsgo8sx",
+					"labelPosition": "auto",
+					"control": "$PDS_UsrCity_rsgo8sx",
+					"listActions": [],
+					"showValueAsLink": true,
+					"controlActions": [],
+					"visible": true,
+					"readonly": false,
+					"placeholder": "",
+					"tooltip": "",
+					"valueDetails": null
+				},
+				"parentName": "GeneralInfoTabContainer",
+				"propertyName": "items",
+				"index": 5
+			},
+			{
+				"operation": "insert",
+				"name": "PromotionDate",
+				"values": {
+					"layoutConfig": {
+						"column": 1,
+						"row": 4,
+						"colSpan": 1,
+						"rowSpan": 1
+					},
+					"type": "crt.DateTimePicker",
+					"label": "$Resources.Strings.PDS_UsrPromotionDate_g9wi09e",
+					"labelPosition": "auto",
+					"control": "$PDS_UsrPromotionDate_g9wi09e",
+					"pickerType": "date"
+				},
+				"parentName": "GeneralInfoTabContainer",
+				"propertyName": "items",
+				"index": 6
+			},
+			{
+				"operation": "insert",
+				"name": "Percent",
+				"values": {
+					"layoutConfig": {
+						"column": 2,
+						"row": 4,
+						"colSpan": 1,
+						"rowSpan": 1
+					},
+					"type": "crt.NumberInput",
+					"label": "#ResourceString(Percent_label)#",
+					"control": "$PDS_UsrOfferTypeUsrCommissionPercent_8bgdyzp",
+					"readonly": true,
+					"placeholder": "",
+					"labelPosition": "auto",
+					"tooltip": ""
+				},
+				"parentName": "GeneralInfoTabContainer",
+				"propertyName": "items",
+				"index": 7
 			}
 		]/**SCHEMA_VIEW_CONFIG_DIFF*/,
 		viewModelConfigDiff: /**SCHEMA_VIEW_MODEL_CONFIG_DIFF*/[
@@ -244,11 +409,29 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 					"PDS_UsrPrice_t5yrl5v": {
 						"modelConfig": {
 							"path": "PDS.UsrPrice"
+						},
+						"validators": {							
+							"MySuperValidator": {								
+								"type": "usr.MinValueValidator",								
+								"params": {											
+									"minValue": 50,									
+									"message": "#ResourceString(PriceCannotBeLess)#"								
+								}							
+							}						
 						}
 					},
 					"PDS_UsrArea_z1ozfk0": {
 						"modelConfig": {
 							"path": "PDS.UsrArea"
+						},
+						"validators": {							
+							"MySuperValidator": {								
+								"type": "usr.MinValueValidator",								
+								"params": {											
+									"minValue": 100,									
+									"message": "#ResourceString(AreaCannotBeLess)#"								
+								}							
+							}						
 						}
 					},
 					"PDS_UsrType_kq6fndr": {
@@ -269,6 +452,44 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 					"PDS_UsrManager_fjisefo": {
 						"modelConfig": {
 							"path": "PDS.UsrManager"
+						}
+					},
+					"PDS_UsrNumber_mdx5rnh": {
+						"modelConfig": {
+							"path": "PDS.UsrNumber"
+						}
+					},
+					"PDS_UsrCountry_3tuo4vm": {
+						"modelConfig": {
+							"path": "PDS.UsrCountry"
+						}
+					},
+					"PDS_UsrCity_rsgo8sx": {
+						"modelConfig": {
+							"path": "PDS.UsrCity"
+						}
+					},
+					"PDS_UsrCommission_d3j4heh": {
+						"modelConfig": {
+							"path": "PDS.UsrCommission"
+						}
+					},
+					"PDS_UsrOfferTypeUsrCommissionPercent_8bgdyzp": {
+						"modelConfig": {
+							"path": "PDS.UsrOfferTypeUsrCommissionPercent_8bgdyzp"
+						}
+					},
+					"PDS_UsrPromotionDate_g9wi09e": {
+						"modelConfig": {
+							"path": "PDS.UsrPromotionDate"
+						},
+						"validators": {							
+							"MySuperValidator": {								
+								"type": "usr.FutureDateValidator",								
+								"params": {											
+									"message": "#ResourceString(FutureDateWarning)#"								
+								}							
+							}						
 						}
 					}
 				}
@@ -302,15 +523,128 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 					"PDS": {
 						"type": "crt.EntityDataSource",
 						"config": {
-							"entitySchemaName": "UsrRealty"
+							"entitySchemaName": "UsrRealty",
+							"attributes": {
+								"UsrOfferTypeUsrCommissionPercent_8bgdyzp": {
+									"path": "UsrOfferType.UsrCommissionPercent",
+									"type": "ForwardReference"
+								}
+							}
 						},
 						"scope": "page"
 					}
 				}
 			}
 		]/**SCHEMA_MODEL_CONFIG_DIFF*/,
-		handlers: /**SCHEMA_HANDLERS*/[]/**SCHEMA_HANDLERS*/,
+		handlers: /**SCHEMA_HANDLERS*/[
+			{
+				request: "usr.PushButtonRequest",
+				/* Implementation of the custom query handler. */
+				handler: async (request, next) => {
+	
+					console.log("Button works...");
+	
+					Terrasoft.showInformation("My button was pressed.");
+					var price = await request.$context.PDS_UsrPrice_t5yrl5v;
+	
+					console.log("Price = " + price);
+					request.$context.PDS_UsrArea_z1ozfk0 = price * 0.2;
+	
+					/* Call the next handler if it exists and return its result. */
+	
+					return next?.handle(request);
+				}
+			},
+			{
+				
+				request: "crt.HandleViewModelAttributeChangeRequest",
+				
+				/* The custom implementation of the system query handler. */
+				
+				handler: async (request, next) => {
+      					
+					if (request.attributeName === 'PDS_UsrPrice_t5yrl5v' || 	// if price changed
+			
+						request.attributeName === 'PDS_UsrOfferTypeUsrCommissionPercent_8bgdyzp' ) { 	// or percent changed
+	
+						// debugger;
+						var price = await request.$context.PDS_UsrPrice_t5yrl5v;
+						
+						var percent = await request.$context.PDS_UsrOfferTypeUsrCommissionPercent_8bgdyzp;
+						
+						var commission = price * percent / 100;
+						
+						request.$context.PDS_UsrCommission_d3j4heh = commission;
+					
+					}
+					
+					/* Call the next handler if it exists and return its result. */
+					
+					return next?.handle(request);
+				
+				}
+			
+			},
+		]/**SCHEMA_HANDLERS*/,
 		converters: /**SCHEMA_CONVERTERS*/{}/**SCHEMA_CONVERTERS*/,
-		validators: /**SCHEMA_VALIDATORS*/{}/**SCHEMA_VALIDATORS*/
+		validators: /**SCHEMA_VALIDATORS*/{
+			/* The validator type must contain a vendor prefix.			
+			Format the validator type in PascalCase. */			
+			"usr.FutureDateValidator": {				
+				validator: function (config) {					
+					return function (control) {						
+						let value = control.value;						
+						let today = new Date();					
+						let valueIsCorrect = value >= today;						
+						var result;						
+						if (valueIsCorrect) {							
+							result = null;						
+						} else {							
+							result = {								
+								"usr.FutureDateValidator": { 									
+									message: config.message								
+								}							
+							};						
+						}						
+						return result;					
+					};				
+				},				
+				params: [					
+					{						
+						name: "message"					
+					}				
+				],				
+				async: false			
+			},
+			"usr.MinValueValidator": {				
+				validator: function (config) {					
+					return function (control) {						
+						let value = control.value;						
+						let minValue = config.minValue;						
+						let valueIsCorrect = value >= minValue;						
+						var result;						
+						if (valueIsCorrect) {							
+							result = null;						
+						} else {							
+							result = {								
+								"usr.MinValueValidator": { 									
+									message: config.message								
+								}							
+							};						
+						}						
+						return result;					
+					};				
+				},				
+				params: [					
+					{						
+						name: "minValue"					
+					},					
+					{						
+						name: "message"					
+					}				
+				],				
+				async: false			
+			}
+		}/**SCHEMA_VALIDATORS*/
 	};
 });
