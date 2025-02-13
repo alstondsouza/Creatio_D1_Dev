@@ -1,0 +1,11 @@
+﻿{
+  "SqlScript": {
+    "UId": "8639c65e-56be-7576-427c-6946bef985f1",
+    "Name": "DisableRootSysAdminTriggerPostgreSQL",
+    "DBEngineType": 2,
+    "InstallType": 0,
+    "ModifiedOnUtc": "\/Date(1739437512000)\/",
+    "BackwardCompatibilityConfirmed": false,
+    "DependsOn": []
+  }
+}
