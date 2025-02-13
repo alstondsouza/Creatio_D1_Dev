@@ -9,7 +9,14 @@
 			<Item Name="LocalizableStrings.addRecord_y0ccsyk_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.addRecord_yldvu68_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.AreaCannotBeLess.Value" Value="Area cannot be less than 100 sq ft" />
+			<Item Name="LocalizableStrings.ExpansionPanel_rkl4g3c_title.Value" Value="Realty Visit" />
 			<Item Name="LocalizableStrings.FutureDateWarning.Value" Value="Promotion date must be in future and cannot be in past" />
+			<Item Name="LocalizableStrings.GridDetailAddBtn_zubzufh_caption.Value" Value="New" />
+			<Item Name="LocalizableStrings.GridDetailExportDataBtn_566g4e6_caption.Value" Value="Export to Excel" />
+			<Item Name="LocalizableStrings.GridDetailImportDataBtn_a6paaef_caption.Value" Value="Data import" />
+			<Item Name="LocalizableStrings.GridDetailRefreshBtn_phj9p2a_caption.Value" Value="Refresh" />
+			<Item Name="LocalizableStrings.GridDetailSearchFilter_b0jrccs_placeholder.Value" Value="Search" />
+			<Item Name="LocalizableStrings.GridDetailSettingsBtn_j41t4of_caption.Value" Value="Actions" />
 			<Item Name="LocalizableStrings.NumberInput_t62fbee_label.Value" Value="Number" />
 			<Item Name="LocalizableStrings.Percent_label.Value" Value="Commission Percent" />
 			<Item Name="LocalizableStrings.PriceCannotBeLess.Value" Value="Price cannot be less than 50.0" />
