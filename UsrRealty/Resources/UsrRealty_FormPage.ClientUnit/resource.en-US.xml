@@ -9,6 +9,8 @@
 			<Item Name="LocalizableStrings.addRecord_y0ccsyk_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.addRecord_yldvu68_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.AreaCannotBeLess.Value" Value="Area cannot be less than 100 sq ft" />
+			<Item Name="LocalizableStrings.Button_xjsqvuu_caption.Value" Value="Actions" />
+			<Item Name="LocalizableStrings.CalcAvgPriceMenuItem_caption.Value" Value="Calculate average price process" />
 			<Item Name="LocalizableStrings.ExpansionPanel_rkl4g3c_title.Value" Value="Realty Visit" />
 			<Item Name="LocalizableStrings.FutureDateWarning.Value" Value="Promotion date must be in future and cannot be in past" />
 			<Item Name="LocalizableStrings.GridDetailAddBtn_zubzufh_caption.Value" Value="New" />
