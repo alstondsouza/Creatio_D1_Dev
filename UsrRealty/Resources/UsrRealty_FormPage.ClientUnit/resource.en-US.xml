@@ -23,6 +23,7 @@
 			<Item Name="LocalizableStrings.Percent_label.Value" Value="Commission Percent" />
 			<Item Name="LocalizableStrings.PriceCannotBeLess.Value" Value="Price cannot be less than 50.0" />
 			<Item Name="LocalizableStrings.PushMeButton_caption.Value" Value="Push Me!" />
+			<Item Name="LocalizableStrings.RunWebServiceMenuItem_caption.Value" Value="Run max price calculation web service" />
 		</Items>
 	</Group>
 </Resources>
