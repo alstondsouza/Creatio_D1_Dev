@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "12fb1439-ee56-4b2c-bb18-12d01cefe2a1",
+    "Name": "UsrGetGorestContactDataServiceMainProcess",
+    "ModifiedOnUtc": "\/Date(1740256770000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "GET Gorest contact data main process",
+    "DependsOn": []
+  }
+}

@@ -21,6 +21,7 @@
 
                 string message = string.Format(messageTemplate, "1.0B$");
                 throw new Exception(message);
+				
             }
         }
     }
