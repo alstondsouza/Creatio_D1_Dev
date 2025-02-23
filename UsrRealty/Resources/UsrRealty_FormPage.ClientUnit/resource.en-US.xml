@@ -19,6 +19,7 @@
 			<Item Name="LocalizableStrings.GridDetailRefreshBtn_phj9p2a_caption.Value" Value="Refresh" />
 			<Item Name="LocalizableStrings.GridDetailSearchFilter_b0jrccs_placeholder.Value" Value="Search" />
 			<Item Name="LocalizableStrings.GridDetailSettingsBtn_j41t4of_caption.Value" Value="Actions" />
+			<Item Name="LocalizableStrings.MinPriceWebServiceMenuItem_caption.Value" Value="Run min price calculation web service" />
 			<Item Name="LocalizableStrings.NumberInput_t62fbee_label.Value" Value="Number" />
 			<Item Name="LocalizableStrings.Percent_label.Value" Value="Commission Percent" />
 			<Item Name="LocalizableStrings.PriceCannotBeLess.Value" Value="Price cannot be less than 50.0" />

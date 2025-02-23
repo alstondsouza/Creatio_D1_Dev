@@ -96,6 +96,22 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common", "RightUt
 			},
 			{
 				"operation": "insert",
+				"name": "MinPriceWebServiceMenuItem",
+				"values": {
+					"type": "crt.MenuItem",
+					"caption": "#ResourceString(MinPriceWebServiceMenuItem_caption)#",
+					"visible": true,
+					"clicked": {
+						"request": "usr.RunMinPriceWebServiceRequest"
+					},
+					"icon": "sum-icon"
+				},
+				"parentName": "Button_xjsqvuu",
+				"propertyName": "menuItems",
+				"index": 2
+			},
+			{
+				"operation": "insert",
 				"name": "PushMeButton",
 				"values": {
 					"type": "crt.Button",
@@ -215,6 +231,29 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common", "RightUt
 				"parentName": "SideAreaProfileContainer",
 				"propertyName": "items",
 				"index": 4
+			},
+			{
+				"operation": "insert",
+				"name": "CheckboxCommentRequired",
+				"values": {
+					"layoutConfig": {
+						"column": 1,
+						"row": 6,
+						"colSpan": 1,
+						"rowSpan": 1
+					},
+					"type": "crt.Checkbox",
+					"label": "$Resources.Strings.PDS_UsrCommentRequired_my8o6ul",
+					"labelPosition": "auto",
+					"control": "$PDS_UsrCommentRequired_my8o6ul",
+					"visible": false,
+					"readonly": true,
+					"placeholder": "",
+					"tooltip": ""
+				},
+				"parentName": "SideAreaProfileContainer",
+				"propertyName": "items",
+				"index": 5
 			},
 			{
 				"operation": "insert",
@@ -992,6 +1031,11 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common", "RightUt
 								}
 							}
 						}
+					},
+					"PDS_UsrCommentRequired_my8o6ul": {
+						"modelConfig": {
+							"path": "PDS.UsrCommentRequired"
+						}
 					}
 				}
 			},
@@ -1121,6 +1165,36 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common", "RightUt
 				}
 			},
 			{
+				
+				request: "crt.HandleViewModelAttributeChangeRequest",
+				
+				/* The custom implementation of the system query handler. */
+				
+				handler: async (request, next) => {
+      					
+					if (request.attributeName === 'PDS_UsrPrice_t5yrl5v' ) { // if price changed
+	
+						// debugger;
+						var price = await request.$context.PDS_UsrPrice_t5yrl5v;
+
+						const sysSettingsService = new sdk.SysSettingsService();
+						const settingValue = await sysSettingsService.getByCode('MinPriceToRequireRealtyComment');
+
+						let minVal = settingValue.value;
+						
+						var condition = price > minVal;
+						
+						request.$context.PDS_UsrCommentRequired_my8o6ul = condition;
+					
+					}
+					
+					/* Call the next handler if it exists and return its result. */
+					
+					return next?.handle(request);
+				
+				}
+			},
+			{
 				request: "usr.RunWebServiceRequest",
 				/* Implementation of the custom query handler. */
 				handler: async (request, next) => {
@@ -1157,6 +1231,48 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common", "RightUt
 					const response = await httpClientService.post(endpoint, params);
 					
 					console.log("response max price = " + response.body.GetMaxPriceByTypeIdResult);
+					
+					/* Call the next handler if it exists and return its result. */
+					return next?.handle(request);
+				}
+			},
+			{
+				request: "usr.RunMinPriceWebServiceRequest",
+				/* Implementation of the custom query handler. */
+				handler: async (request, next) => {
+					console.log("Run min price web service call works...");
+
+					// get id from type lookup type object
+					var typeObject = await request.$context.PDS_UsrType_kq6fndr;
+					var typeId = "";
+					if (typeObject) {
+						typeId = typeObject.value;
+					}
+
+					// get id from type lookup offer type object
+					var offerTypeObject = await request.$context.PDS_UsrOfferType_94et8gg;
+					var offerTypeId = "";
+					if (offerTypeObject) {
+						offerTypeId = offerTypeObject.value;
+					}
+					/* Create an instance of the HTTP client from @creatio-devkit/common. */
+					const httpClientService = new sdk.HttpClientService();
+
+					/* Specify the URL to run web service method. */
+					const baseUrl = Terrasoft.utils.uri.getConfigurationWebServiceBaseUrl();
+					const transferName = "rest";
+					const serviceName = "RealtyService";
+					const methodName = "GetMinPriceByTypeId";
+					const endpoint = Terrasoft.combinePath(baseUrl, transferName, serviceName, methodName);
+					//const endpoint = "http://localhost/D1_Studio/0/rest/RealtyService/GetMaxPriceByTypeId";
+					/* Send a POST HTTP request. The HTTP client converts the response body from JSON to a JS object automatically. */
+					var params = {
+						realtyTypeId: typeId,
+						realtyOfferTypeId: offerTypeId
+					};
+					const response = await httpClientService.post(endpoint, params);
+					
+					console.log("response min price = " + response.body.GetMinPriceByTypeIdResult);
 					
 					/* Call the next handler if it exists and return its result. */
 					return next?.handle(request);
